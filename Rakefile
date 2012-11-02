@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "jtest"
   gem.homepage = "http://github.com/hecrj/jtest"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Jutge.org testing tool!"
+  gem.description = "Tool for automatic testing and creating problems from Jutge.org"
   gem.email = "hector0193@gmail.com"
-  gem.authors = ["Héctor"]
+  gem.authors = ["Héctor Ramón Jiménez"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -30,14 +30,6 @@ Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
-end
-
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
 end
 
 task :default => :test
