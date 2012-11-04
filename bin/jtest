@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 
-require "jtest"
+require "jtest/cli"
 
-command = ARGV.shift
-
-jtest = JTest.new
-jtest.send(command, *ARGV)
+begin
+  Jtest::CLI.start
+rescue
+  Thor::Shell::Color.new.say_status :exception, $!.message, :red
+  exit 1
+end
