@@ -1,7 +1,13 @@
 require 'helper'
 
 class TestJtest < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
-  end
+	def setup
+		@jtest = Jtest.new
+	end
+
+	should "create a problem with its samples" do
+		@jtest.new("P93774_en")
+
+		assert(Dir.exists?("P93774_Fractal_pictures"))
+	end
 end
