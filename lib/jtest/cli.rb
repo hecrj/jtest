@@ -8,6 +8,10 @@ module Jtest
 
     add_runtime_options!
 
+    register Jtest::Commands::Find, "find", "find [NAME]",
+    "Finds all the problems that match with the given name"
+    tasks["find"].options = Jtest::Commands::Find.class_options
+
     register Jtest::Commands::New, "new", "new [ID]",
     "Creates a workspace to solve problem with the given id"
     tasks["new"].options = Jtest::Commands::New.class_options

@@ -43,6 +43,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.24"
   s.summary = "Jutge.org testing tool!"
 
+  s.extensions = 'ext/mkrf_conf.rb'
+
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
