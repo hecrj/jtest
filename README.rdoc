@@ -6,55 +6,55 @@ jtest provides some simple commands to finding new problems and creating workspa
 == Usage
 
 === Finding a problem
-	$ jtest find Treasures
-	working  Trying to find problems that match: Treasures
+    $ jtest find Treasures
+    working  Trying to find problems that match: Treasures
      P70690  Treasures in a map (1)
      P60796  Treasures in a map (2)
      P90766  Treasures in a map (3)
      P39846  Treasures in a map (4)
       found  4 matches found!
 
-This will show all the problems that contain "Treasures" in his name!
+This will show all the problems that contain `Treasures` in his name!
 
 === Creating a new problem
-Let's create a workspace for solving "Treasures in a map (1)".
-	$ jtest new 70690
-	connecting  Getting info about problem P70690_en...
-         found  P70690_en: Treasures in a map (1)
-       working  Creating workspace for P70690_en: Treasures in a map (1)
-        create  P70690_Treasures_in_a_map_(1)
-        create  P70690_Treasures_in_a_map_(1)/sample1.dat
-        create  P70690_Treasures_in_a_map_(1)/sample1.out
-        create  P70690_Treasures_in_a_map_(1)/sample2.dat
-        create  P70690_Treasures_in_a_map_(1)/sample2.out
-        create  P70690_Treasures_in_a_map_(1)/sample3.dat
-        create  P70690_Treasures_in_a_map_(1)/sample3.out
-        create  P70690_Treasures_in_a_map_(1)/main.cc
+Let's create a workspace for solving `Treasures in a map (1)`.
+     $ jtest new 70690
+     connecting  Getting info about problem P70690_en...
+          found  P70690_en: Treasures in a map (1)
+        working  Creating workspace for P70690_en: Treasures in a map (1)
+         create  P70690_Treasures_in_a_map_(1)
+         create  P70690_Treasures_in_a_map_(1)/sample1.dat
+         create  P70690_Treasures_in_a_map_(1)/sample1.out
+         create  P70690_Treasures_in_a_map_(1)/sample2.dat
+         create  P70690_Treasures_in_a_map_(1)/sample2.out
+         create  P70690_Treasures_in_a_map_(1)/sample3.dat
+         create  P70690_Treasures_in_a_map_(1)/sample3.out
+         create  P70690_Treasures_in_a_map_(1)/main.cc
 As you can see, jtest automatically downloads every public sample of the problem and creates a C++ main file to start solving your problem.
 
 === Testing your solutions
 All right! I think I've solved the problem we created before. Let's see if it passes the public samples!
-	$ jtest test
-	testing  Running tests on P70690_Treasures_in_a_map_(1)...
-    compile  P70690_Treasures_in_a_map_(1)/main.cc
-    running  P70690_Treasures_in_a_map_(1)/sample1.dat
-      wrong  P70690_Treasures_in_a_map_(1)/sample1.out
-    running  P70690_Treasures_in_a_map_(1)/sample2.dat
-      wrong  P70690_Treasures_in_a_map_(1)/sample2.out
-    running  P70690_Treasures_in_a_map_(1)/sample3.dat
-      wrong  P70690_Treasures_in_a_map_(1)/sample3.out
-    ---------------------------------------------------
-     failed  0
-    missing  0
-      wrong  3
-     passed  0
-      total  3
-    ---------------------------------------------------
+     $ jtest test
+     testing  Running tests on P70690_Treasures_in_a_map_(1)...
+     compile  P70690_Treasures_in_a_map_(1)/main.cc
+     running  P70690_Treasures_in_a_map_(1)/sample1.dat
+       wrong  P70690_Treasures_in_a_map_(1)/sample1.out
+     running  P70690_Treasures_in_a_map_(1)/sample2.dat
+       wrong  P70690_Treasures_in_a_map_(1)/sample2.out
+     running  P70690_Treasures_in_a_map_(1)/sample3.dat
+       wrong  P70690_Treasures_in_a_map_(1)/sample3.out
+     ---------------------------------------------------
+      failed  0
+     missing  0
+       wrong  3
+      passed  0
+       total  3
+     ---------------------------------------------------
 Ooops! It seems my solution doesn't work very well... When the Nth sample test fails jtest saves the output of your solution as sampleN_test.out in the problem's workspace, so you can see what's going wrong.
 
 === Getting help
 You can obtain help about how to use one command with the help command. For example:
-	$ jtest help new
+     $ jtest help new
 Will show you all the information you need to use the `new` command (syntax, options, description, etc.).
 
 == Contributing to jtest
