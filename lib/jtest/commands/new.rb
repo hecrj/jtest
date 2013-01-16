@@ -13,6 +13,10 @@ module Jtest
       class_option :prefix, :type => :string, :aliases => '-p', :desc => "Prefix of the problem",
         :default => 'P'
 
+      def self.source_root
+        File.dirname(__FILE__)
+      end
+
       def get_problem_info
         @problem = Problem.new(id, options)
 
@@ -33,6 +37,8 @@ module Jtest
           create_file "#{@problem.dirname}/sample#{index+1}.dat", sample[0]
           create_file "#{@problem.dirname}/sample#{index+1}.out", sample[1]
         end
+
+        template "../templates/main.tt", "#{@problem.dirname}/main.cc"
       end
     end
   end
