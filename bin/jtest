@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require "jtest/cli"
+
+begin
+  Jtest::CLI.start
+rescue
+  Thor::Shell::Color.new.say_status :exception, $!.message, :red
+  exit 1
+end
