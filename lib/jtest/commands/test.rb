@@ -42,7 +42,7 @@ module Jtest
         end
         
         say_status :compile, "make test", :blue
-        compiled = system("make test")
+        compiled = system("make test > /dev/null")
 
         unless compiled
           result :failed, "make test", :red

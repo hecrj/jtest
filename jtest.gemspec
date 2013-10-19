@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["hector0193@gmail.com"]
   spec.description   = %q{Tool for automatic testing and creating problems from Jutge.org}
   spec.summary       = %q{Tool for automatic testing and creating problems from Jutge.org}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/hecrj/jtest"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
