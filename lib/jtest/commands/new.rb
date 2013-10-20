@@ -39,6 +39,7 @@ module Jtest
         end
 
         template "../templates/main.tt", "#{@problem.dirname}/main.cc"
+        template "../templates/Makefile.tt" "#{@problem.dirname}/Makefile"
       end
     end
   end
