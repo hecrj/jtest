@@ -1,2 +1,2 @@
 test:
-    g++ main.cc -o test -O2
+	g++ main.cc -o test -O2
