@@ -29,7 +29,15 @@ module Jtest
       private
       def perform_test(dir)
         unless File.exists?('Makefile')
-          say_status :missing, "#{dir}/Makefile", :magenta
+          result :missing, "#{dir}/Makefile", :yellow
+          return
+        end
+
+        say_status :make, "#{dir}/Makefile", :blue
+        compiled = system("make test > /dev/null")
+
+        unless compiled
+          result :failed, "#{dir}/Makefile", :red
           return
         end
 
@@ -38,14 +46,6 @@ module Jtest
 
         if samples.empty?
           say_status :nosamples, "#{dir}/", :blue
-          return
-        end
-        
-        say_status :compile, "make test", :blue
-        compiled = system("make test > /dev/null")
-
-        unless compiled
-          result :failed, "make test", :red
           return
         end
 

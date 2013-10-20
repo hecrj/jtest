@@ -10,7 +10,7 @@ module Jtest
       :dir_id      => /[0-9]+/,
       :invalid_url => "Wrong URL."
     }
-    DEFAULT_OPTIONS = {:lang => 'en', :prefix => 'P', :dirname => nil}
+    DEFAULT_OPTIONS = {"lang" => 'en', "prefix" => 'P', "dirname" => nil}
 
     attr_reader :id
     attr_reader :title
@@ -20,7 +20,7 @@ module Jtest
     def initialize(id, options = {})
       options = DEFAULT_OPTIONS.merge(options)
 
-      @id = options[:prefix] + id.to_s + '_' + options[:lang]
+      @id = options["prefix"] + id.to_s + '_' + options["lang"]
       @title = nil
       @samples = []
       @dirname = options[:dirname]
